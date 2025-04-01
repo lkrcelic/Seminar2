@@ -1,0 +1,43 @@
+Listing all available TTS models...
+
+Slavic language models:
+- tts_models/bg/cv/vits
+- tts_models/cs/cv/vits
+- tts_models/uk/mai/glow-tts
+- tts_models/uk/mai/vits
+- tts_models/hr/cv/vits
+- tts_models/pl/mai_female/vits
+- tts_models/sk/cv/vits
+- tts_models/sl/cv/vits
+- tts_models/be/common-voice/glow-tts
+- vocoder_models/uk/mai/multiband-melgan
+- vocoder_models/be/common-voice/hifigan
+
+Multilingual models that support Slavic languages:
+- tts_models/multilingual/multi-dataset/xtts_v2
+- tts_models/multilingual/multi-dataset/xtts_v1.1
+- tts_models/multilingual/multi-dataset/your_tts
+- tts_models/multilingual/multi-dataset/bark
+- voice_conversion_models/multilingual/vctk/freevc24
+- voice_conversion_models/multilingual/multi-dataset/knnvc
+- voice_conversion_models/multilingual/multi-dataset/openvoice_v1
+- voice_conversion_models/multilingual/multi-dataset/openvoice_v2
+
+Languages supported by XTTS v2:
+- Arabic (ar)
+- Chinese (zh-cn)
+- Czech (cs)
+- Dutch (nl)
+- English (en)
+- French (fr)
+- German (de)
+- Hindi (hi)
+- Hungarian (hu)
+- Italian (it)
+- Japanese (ja)
+- Korean (ko)
+- Polish (pl)
+- Portuguese (pt)
+- Russian (ru)
+- Spanish (es)
+- Turkish (tr)

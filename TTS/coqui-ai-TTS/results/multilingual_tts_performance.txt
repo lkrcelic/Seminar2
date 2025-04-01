@@ -1,0 +1,10 @@
+Generating speech using XTTS with language: ru
+Using device: cpu
+Using sample voice from: sample_voices\sample_voice.wav
+
+Performance Results:
+Language: ru (XTTS)
+Processing time: 34.56 seconds
+Audio duration: 6.16 seconds
+Performance ratio: 5.61x (i.e., 5.61 seconds of processing time per 1 second of audio)
+In other words: 34.56 seconds were needed to synthesize 6.16 seconds of speech

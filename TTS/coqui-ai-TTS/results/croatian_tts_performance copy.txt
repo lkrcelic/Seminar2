@@ -1,0 +1,6 @@
+Performance Results:
+Model: Croatian VITS
+Processing time: 0.81 seconds
+Audio duration: 5.63 seconds
+Performance ratio: 0.14x (i.e., 0.14 seconds of processing time per 1 second of audio)
+In other words: 0.81 seconds were needed to synthesize 5.63 seconds of speech
