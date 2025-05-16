@@ -20,9 +20,12 @@ def generate_speech_multilingual(text, language="cs", output_file=None):
     device = "cuda" if torch.cuda.is_available() else "cpu"
     print(f"Using device: {device}")
     
-    # Initialize TTS with XTTS model
+    # Initialize TTS with XTTS v2 model
     start_time = time.time()
-    tts = TTS("tts_models/multilingual/multi-dataset/xtts_v2").to(device)
+    model_name = "tts_models/multilingual/multi-dataset/xtts_v2"
+    print(f"Loading model: {model_name}")
+    
+    tts = TTS(model_name).to(device)
     
     # Create directory for sample voices if it doesn't exist
     os.makedirs("sample_voices", exist_ok=True)
