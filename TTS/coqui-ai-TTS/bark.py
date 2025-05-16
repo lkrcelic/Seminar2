@@ -12,41 +12,24 @@ def generate_speech_multilingual(text, language="cs", output_file=None):
     """Generate speech using XTTS multilingual model"""
     # Create output filename with language prefix if not provided
     if output_file is None:
-        output_file = f"{language}_output.wav"
+        output_file = f"bark_{language}_output.wav"
     
     print(f"Generating speech using XTTS with language: {language}")
     
     # Get device
     device = "cuda" if torch.cuda.is_available() else "cpu"
     print(f"Using device: {device}")
-    
+
     # Initialize TTS with XTTS v2 model
+    tts = TTS("tts_models/multilingual/multi-dataset/bark").to(device)
+
     start_time = time.time()
-    model_name = "tts_models/multilingual/multi-dataset/xtts_v2"
-    print(f"Loading model: {model_name}")
-    
-    tts = TTS(model_name).to(device)
-    
-    # Create directory for sample voices if it doesn't exist
-    os.makedirs("sample_voices", exist_ok=True)
-    
-    # Check if we have a sample voice file, if not create one
-    sample_voice_path = os.path.join("sample_voices", "sample_voice.wav")
-    if not os.path.exists(sample_voice_path):
-        print("Creating a sample voice file...")
-        # Generate a simple sine wave as a sample voice
-        import numpy as np
-        sample_rate = 16000
-        duration = 3  # seconds
-        t = np.linspace(0, duration, int(sample_rate * duration), endpoint=False)
-        # Generate a 440 Hz sine wave
-        data = 0.5 * np.sin(2 * np.pi * 440 * t)
-        sf.write(sample_voice_path, data, sample_rate)
-    
-    # Generate speech
-    print(f"Using sample voice from: {sample_voice_path}")
-    tts.tts_to_file(text=text, speaker_wav=sample_voice_path, language=language, file_path=output_file)
-    
+
+    tts.tts_to_file(
+        text="Ovo je test.",
+        file_path=output_file
+    )   
+
     # Calculate performance metrics
     end_time = time.time()
     processing_time = end_time - start_time
@@ -60,7 +43,7 @@ def generate_speech_multilingual(text, language="cs", output_file=None):
     
     # Print performance results
     print("\nPerformance Results:")
-    print(f"Language: {language} (XTTS)")
+    print(f"Language: {language}")
     print(f"Processing time: {processing_time:.2f} seconds")
     print(f"Audio duration: {audio_duration:.2f} seconds")
     print(f"Performance ratio: {ratio:.2f}x (i.e., {ratio:.2f} seconds of processing time per 1 second of audio)")
